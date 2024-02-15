@@ -11,7 +11,7 @@
  Target Server Version : 100432
  File Encoding         : 65001
 
- Date: 15/02/2024 08:14:27
+ Date: 15/02/2024 15:31:46
 */
 
 SET NAMES utf8mb4;
@@ -39,8 +39,10 @@ CREATE TABLE `production`  (
   `product_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `quantity` int(11) NOT NULL,
   `production_date` date NOT NULL,
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+  `status_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `user_id` int(10) NOT NULL,
+  PRIMARY KEY (`id`, `user_id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 16 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for users
