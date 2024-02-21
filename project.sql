@@ -11,7 +11,7 @@
  Target Server Version : 100432
  File Encoding         : 65001
 
- Date: 20/02/2024 18:16:49
+ Date: 21/02/2024 08:30:46
 */
 
 SET NAMES utf8mb4;
@@ -175,19 +175,18 @@ DROP TABLE IF EXISTS `production`;
 CREATE TABLE `production`  (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `product_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `quantity` int(11) NOT NULL,
-  `production_date` date NOT NULL,
-  `status_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `tellnumber` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `address` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `production_date` timestamp(0) NOT NULL DEFAULT current_timestamp(0),
+  `details` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
+  `status_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `tellnumber` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `address` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 25 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of production
 -- ----------------------------
-INSERT INTO `production` VALUES (23, 'Body Serum Booster', 250, '2024-02-13', 'รับออเดอร์', '0627746086', 'ชลบุรี');
-INSERT INTO `production` VALUES (24, 'Body Lotion Booster', 300, '2024-02-22', 'ออกแบบแพ็คเกจ', '0627746086', 'ชลบุรี');
+INSERT INTO `production` VALUES (2, 'Body Lotion Booster', '2024-02-21 08:12:00', '100 ขวด', 'รับออเดอร์', '0627746086', '72 หมู่ 6 ชลบุรี หนองอิรุณ บ้านบึง');
 
 -- ----------------------------
 -- Table structure for users
